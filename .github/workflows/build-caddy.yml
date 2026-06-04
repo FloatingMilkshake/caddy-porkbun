@@ -9,6 +9,9 @@ permissions:
   contents: read
   packages: write
 
+env:
+  CADDY_VERSION: 2.11.3
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,4 +35,7 @@ jobs:
           context: .
           platforms: linux/amd64, linux/arm64
           push: true
-          tags: ghcr.io/floatingmilkshake/caddy-porkbun:latest
+          build-args: CADDY_VERSION=${{ env.CADDY_VERSION }}
+          tags: |
+            ghcr.io/floatingmilkshake/caddy-porkbun:latest
+            ghcr.io/floatingmilkshake/caddy-porkbun:${{ env.CADDY_VERSION }}
