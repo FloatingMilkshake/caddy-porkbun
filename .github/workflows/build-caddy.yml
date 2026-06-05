@@ -10,7 +10,7 @@ permissions:
   packages: write
 
 env:
-  CADDY_VERSION: 2.11.3
+  CADDY_VERSION: 2.11.4
 
 jobs:
   build:
