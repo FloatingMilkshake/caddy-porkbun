@@ -11,7 +11,6 @@ jobs:
     with:
       image-name: floatingmilkshake/caddy-porkbun
       push: ${{ forgejo.event_name == 'workflow_dispatch' || (forgejo.event_name == 'push' && forgejo.ref == 'refs/heads/main') }}
-      build-args: CADDY_VERSION=2.11.4
       extra-tag: 2.11.4
     secrets:
       registry-token: ${{ secrets.REGISTRY_TOKEN }}

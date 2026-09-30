@@ -1,4 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "prHourlyLimit": 0
+  "prHourlyLimit": 0,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.forgejo/workflows/build-caddy\\.yml$/"],
+      "matchStrings": ["extra-tag: (?<currentValue>\\S+)"],
+      "depNameTemplate": "caddy",
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDepNames": ["caddy"],
+      "groupName": "caddy"
+    }
+  ]
 }
