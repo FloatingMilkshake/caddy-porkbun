@@ -1,7 +1,6 @@
 name: build-caddy
 
 on:
-  pull_request:
   push:
   workflow_dispatch:
 
